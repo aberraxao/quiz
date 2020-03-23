@@ -20,7 +20,8 @@
     This will generate a password encoded with sha-256 limited to 15 characters.
     
 2. Fill the log-in details with the 'user' and 'password' from the step above and press 'START':
-* ![](static/images/questions.PNG)
+
+    ![](static/images/questions.PNG)
 
 3. Reply to the questions and at, the end, click on 'Save and Quit' to see how many answers you got right!
 * *Currently the detection of the start of the quiz is based on saving the quiz for the first time.*
@@ -31,7 +32,7 @@
 * The questions are stored in [question.xlsx](/static/questions.xlsx):
   * To simplify, the correct answer calways orresponds to the "Choice 1"
   * Tabs are not supported, instead we 4 spaces should be used
-  * ![](static/images/questions.PNG)
+      ![](static/images/questions.PNG)
   
 * The duration of the quiz and weights of each category an be defined in [config.csv](/static/config.csv):
     | Theme     | Time (min) | Logic | VBA  | Python | Code |
