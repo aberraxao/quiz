@@ -1,0 +1,32 @@
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<body>
+    <form action="/" method="GET">
+        <div class="welcome">
+            <div class="pwd-screen">
+                <div class="app-title">
+                <p>
+                    <h4><font color="black">{{title}}</font></h4>
+                </p>
+                </div>
+                <div class="login-form">
+                    <div class="control-group">
+                        <input style="width: 355px;" type="text" class="login-field" value={{c}} placeholder="user" name="user">
+                        <label class="login-field-icon fui-user" for="login-name"></label></div>
+                    <p>
+                    <div class="control-group">
+                        <input style="width: 355px;" type="text" class="login-field" value={{pwd}} placeholder="password" name="password">
+                        <label class="login-field-icon fui-lock" for="login-pass"></label>
+                    </div>
+                    </p>
+                    <p><input type="submit" value="RETURN" class="button"></p>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</body>
+
+</html>

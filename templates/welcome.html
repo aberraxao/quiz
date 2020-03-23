@@ -1,0 +1,40 @@
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<body>
+    <form action="/quiz" method="POST">
+        <div class="welcome">
+            <div class="login-screen">
+                <div class="app-title">
+                    <h2><b>
+                            <font color="#00915A">Welcome to this quiz!</font>
+                        </b></h2>
+                    <p>
+                        <h5>
+                            Time will be taken into account. The estimated time will be shown on the next page.
+                            <br/>
+                            <font color="red">Warning: You can only start the quiz once.</font><br /><br />
+                            Please insert below the 'user' and 'password' provided, then press the button 'START'.
+                        </h5>
+                </div>
+                <div class="login-form">
+                    <div class="control-group">
+                        <input style="width: 355px;" type="text" class="login-field" value="{{c}}"
+                            placeholder="user" name="user">
+                        <label class="login-field-icon fui-user" for="login-name"></label></div>
+
+                    <p> <input style="width: 355px;" type="text" class="login-field" value="{{p}}"
+                               placeholder="password" name="password">
+                        <label class="login-field-icon fui-lock" for="login-pass"></label>
+                        <h6><font color="red">{{w}}</font>
+
+                    <p><input type="submit" value="START" class="button"></p>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</body>
+
+</html>

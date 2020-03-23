@@ -1,0 +1,64 @@
+<html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+    .noselect {
+        -webkit-touch-callout: none;
+        /* iOS Safari */
+        -webkit-user-select: none;
+        /* Safari */
+        -khtml-user-select: none;
+        /* Konqueror HTML */
+        -moz-user-select: none;
+        /* Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer/Edge */
+        user-select: none;
+        /* Non-prefixed version, currently supported by Chrome and Opera */
+    }
+    .noselect .ident {
+        text-indent: 50px;
+    }
+</style>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/static/quiz.js"></script>
+</head>
+
+<h1><b><font color="#00915A">&ensp;Quiz Assessment Test</font></b>
+<h5><font color="black">&ensp;&ensp;<b>  - Theme selected:</b> {{theme}}<br/>
+                        &ensp;&ensp;<b>  - Estimated duration:</b> {{tt}} min</font></h5></h1>
+
+<form action='/done?user={{c}}' method='POST'>
+    <input type='hidden' value='{{c}}' name='username'>
+    <input type='hidden' value='{{t0}}' name='time_start'>
+    <input type='hidden' value='{{tt}}' name='time_end'>
+    <input type='hidden' value='{{theme}}' name='theme'>
+    <ol class="ident">
+    {% for qi in q %}
+        <li class="noselect">
+            <h5>{% for qline in q[qi][0].split("\n") %}
+                    {% for ql in qline.split("    ") %}
+                        {% if ql != qline.split("    ")[0] %}
+                            &emsp;
+                        {% endif %}
+                        {{ql}}
+                    {% endfor %}
+                    <br/>
+                {% endfor %}
+            </h5>
+            <h6>{% for oj in q[qi][1:] %}
+                <input type='radio' value='{{oj}}' name='{{qi}}'/>&ensp;{{oj}}<br/>
+            {% endfor %}
+            <input type='radio' value='NA' name='{{qi}}' checked='checked' style="display:none"/>
+            </h6>
+        </li>
+    {% endfor %}
+    </ol>
+    <button id="mybutton" class="btn btn-outline-success">Save</button>
+    <button type="submit" class="btn btn-outline-success">Save and Quit</button>
+</form>
+
+</html>
